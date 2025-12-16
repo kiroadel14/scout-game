@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الشخصية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="box" id="content"></div>
+
+  <script>
+    const character = localStorage.getItem("character");
+    const content = document.getElementById("content");
+
+    const characters = {
+    1: {
+  name: "القائد المساعد",
+  info: `* قديم في الكشافه<br>
+* شايف نفسه الأحق بالقياده<br>
+* عنده ديون مالية كتير<br>
+* علاقته قريبة بجورج<br>
+* بيكره أي حد بيشكك في قراراته`
+},
+
+      2: {
+        name: "المستكشف",
+        info: "يعرف الطرق ويحب المغامرات."
+      },
+      3: {
+        name: "الحكيم",
+        info: "يحل الألغاز ويقدم النصائح."
+      },
+      4: {
+        name: "المنقذ",
+        info: "يساعد الآخرين وقت الخطر."
+      },
+      5: {
+        name: "المنظم",
+        info: "يحب النظام والتخطيط."
+      }
+    };
+
+    if (!character) {
+      window.location.href = "index.html";
+    } else {
+      content.innerHTML = `
+        <h1>${characters[character].name}</h1>
+        <p>${characters[character].info}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
